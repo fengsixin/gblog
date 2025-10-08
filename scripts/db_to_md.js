@@ -6,9 +6,9 @@
  * node db_to_md.js db_username db_password
  */
 
+import * as fs from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import * as fs from 'node:fs'
 import mysql from 'mysql2/promise'
 
 const __filename = fileURLToPath(import.meta.url)

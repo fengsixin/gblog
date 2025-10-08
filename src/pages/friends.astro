@@ -1,8 +1,8 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro'
-import MainSection from '@components/ui/sections/MainSection.astro'
-import { getCollection } from 'astro:content'
 import type { CollectionEntry } from 'astro:content'
+import MainSection from '@components/ui/sections/MainSection.astro'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import { getCollection } from 'astro:content'
 
 const friendsData: CollectionEntry<'friends'>[] = await getCollection('friends')
 if (friendsData?.length === 0) {
@@ -129,29 +129,29 @@ const friends = friendsData[0].data
         </div>
     </section>
     <script is:inline>
-    function changeAvatar(event) {
-        const dark = event?.detail === 'dark'
-        Array.from(document.getElementsByClassName('friend-avatar')).forEach((avatar) => {
-            const darkAvatar = avatar.getAttribute('data-dark')
-            if (dark && darkAvatar) {
-                avatar.src = avatar.getAttribute('data-dark')
-            }
-            else {
-                avatar.src = avatar.getAttribute('data-light')
-            }
-        })
-    }
-    function getCurrentTheme() {
-        if (window.localStorage.getItem('hs_theme')) {
-            return window.localStorage.getItem('hs_theme') ?? 'default'
-        }
+ function changeAvatar(event) {
+     const dark = event?.detail === 'dark'
+     Array.from(document.getElementsByClassName('friend-avatar')).forEach((avatar) => {
+         const darkAvatar = avatar.getAttribute('data-dark')
+         if (dark && darkAvatar) {
+             avatar.src = avatar.getAttribute('data-dark')
+         }
+ else {
+             avatar.src = avatar.getAttribute('data-light')
+         }
+     })
+ }
+ function getCurrentTheme() {
+     if (window.localStorage.getItem('hs_theme')) {
+         return window.localStorage.getItem('hs_theme') ?? 'default'
+     }
 
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-        changeAvatar({ detail: getCurrentTheme() })
+     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'
+ }
+ document.addEventListener('DOMContentLoaded', () => {
+     changeAvatar({ detail: getCurrentTheme() })
 
-        window.addEventListener('on-hs-appearance-change', changeAvatar)
-    })
-    </script>
+     window.addEventListener('on-hs-appearance-change', changeAvatar)
+ })
+ </script>
 </BaseLayout>

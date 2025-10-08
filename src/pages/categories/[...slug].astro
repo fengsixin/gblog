@@ -1,8 +1,9 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro'
-import { type CollectionEntry, getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
 import BlogCard from '@components/blog/BlogCard.astro'
 import MainSection from '@components/ui/sections/MainSection.astro'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import { getCollection } from 'astro:content'
 import { SITE } from '@/config'
 
 export async function getStaticPaths() {

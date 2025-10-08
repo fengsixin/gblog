@@ -1,5 +1,5 @@
-import getReadingTime from 'reading-time'
 import { toString } from 'mdast-util-to-string'
+import getReadingTime from 'reading-time'
 
 export function remarkReadingTime() {
     // eslint-disable-next-line ts/ban-ts-comment

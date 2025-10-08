@@ -46,4 +46,4 @@ function timeago(date?: Date): string {
     return format(date, 'timeago')
 }
 
-export { formatDate, timeago, formatDateTime }
+export { formatDate, formatDateTime, timeago }

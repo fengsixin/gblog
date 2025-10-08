@@ -1,12 +1,12 @@
 ---
-import { getCollection } from 'astro:content'
 import type { CollectionEntry } from 'astro:content'
-import BaseLayout from '@layouts/BaseLayout.astro'
 import BlogInsight from '@components/blog/BlogInsight.astro'
-import HeroSection from '@components/ui/sections/HeroSection.astro'
 import FeaturesSection from '@components/ui/sections/FeaturesSection.astro'
+import HeroSection from '@components/ui/sections/HeroSection.astro'
 import HeroSectionAlt from '@components/ui/sections/HeroSectionAlt.astro'
 import blogHeroImg from '@images/home.png'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import { getCollection } from 'astro:content'
 
 const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort(
     (a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -15,7 +15,8 @@ const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort(
 
 <BaseLayout>
     <HeroSection
-        title=`Hello, <span class="text-yellow-500 dark:text-yellow-400">Godruoyi</span>`
+        title=
+`Hello, <span class="text-yellow-500 dark:text-yellow-400">Godruoyi</span>`
         subTitle="Hi, I'm Lianbo, I enjoy the process of building something using any technology stack, welcome to my blog"
         primaryBtn="Explore Posts"
         primaryBtnURL="/posts"

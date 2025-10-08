@@ -2,9 +2,10 @@
 // see https://github.com/delucis/astro-blog-full-text-rss/blob/latest/src/pages/rss.xml.ts
 // get more context
 
-import { getContainerRenderer as getMDXRenderer } from '@astrojs/mdx'
-import rss, { type RSSFeedItem } from '@astrojs/rss'
+import type { RSSFeedItem } from '@astrojs/rss'
 import type { APIContext } from 'astro'
+import { getContainerRenderer as getMDXRenderer } from '@astrojs/mdx'
+import rss from '@astrojs/rss'
 import { experimental_AstroContainer as AstroContainer } from 'astro/container'
 import { loadRenderers } from 'astro:container'
 import { getCollection } from 'astro:content'

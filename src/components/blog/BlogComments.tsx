@@ -1,5 +1,6 @@
+import type { Repo } from '@giscus/react'
+import Giscus from '@giscus/react'
 import * as React from 'react'
-import Giscus, { type Repo } from '@giscus/react'
 import { Settings } from '@/config.ts'
 
 const id = 'inject-comments'

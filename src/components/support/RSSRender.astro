@@ -1,5 +1,6 @@
 ---
-import { type ContentCollectionKey, getEntry } from 'astro:content'
+import type { ContentCollectionKey } from 'astro:content'
+import { getEntry } from 'astro:content'
 
 const { collection, slug } = Astro.params
 const entry = await getEntry(collection as ContentCollectionKey, slug as string)
