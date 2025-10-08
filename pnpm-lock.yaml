@@ -9,19 +9,19 @@ importers:
   .:
     dependencies:
       '@astrojs/mdx':
-        specifier: ^4.2.4
+        specifier: ^4.3.6
         version: 4.3.6(astro@5.14.1(@types/node@24.7.0)(jiti@1.21.7)(lightningcss@1.24.1)(rollup@4.52.4)(terser@5.31.0)(typescript@5.9.3)(yaml@2.8.1))
       '@astrojs/partytown':
         specifier: ^2.1.4
         version: 2.1.4
       '@astrojs/react':
-        specifier: ^4.2.4
+        specifier: ^4.4.0
         version: 4.4.0(@types/node@24.7.0)(@types/react-dom@19.2.1(@types/react@19.2.2))(@types/react@19.2.2)(jiti@1.21.7)(lightningcss@1.24.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(terser@5.31.0)(yaml@2.8.1)
       '@astrojs/rss':
-        specifier: ^4.0.11
+        specifier: ^4.0.12
         version: 4.0.12
       '@astrojs/sitemap':
-        specifier: ^3.3.0
+        specifier: ^3.6.0
         version: 3.6.0
       '@astrojs/tailwind':
         specifier: ^6.0.2
@@ -48,7 +48,7 @@ importers:
         specifier: ^3.0.2
         version: 3.0.3
       astro:
-        specifier: ^5.6.2
+        specifier: ^5.14.1
         version: 5.14.1(@types/node@24.7.0)(jiti@1.21.7)(lightningcss@1.24.1)(rollup@4.52.4)(terser@5.31.0)(typescript@5.9.3)(yaml@2.8.1)
       astro-compressor:
         specifier: ^0.4.1
@@ -7724,7 +7724,7 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 24.7.0
 
   '@types/trusted-types@2.0.7': {}
 
