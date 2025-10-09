@@ -1,54 +1,44 @@
 ---
 import Icon from '@components/ui/icons/icon.astro'
+
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+  href?: string;
+}
+
+interface Props {
+  features: Feature[];
+}
+
+const { features = [] }: Props = Astro.props;
 ---
 
 <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
     <div class="flex flex-col items-center justify-center gap-y-2 sm:flex-row sm:gap-x-12 sm:gap-y-0 lg:gap-x-24">
         <div class="max-w-5xl px-4 sm:px-6 lg:px-8 mx-auto">
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-                <a class="group flex flex-col bg-neutral-100 dark:bg-neutral-900/30 rounded-xl hover:group" href="#">
-                    <div class="p-4 md:p-5">
-                        <div class="flex">
-                            <Icon name="server" />
-                            <div class="grow ms-5">
-                                <span class="block text-lg font-bold text-neutral-600 group-hover:text-orange-400 dark:text-neutral-300 dark:group-hover:text-orange-300">Focus on Backend</span>
-                                <span class="mt-1 block text-neutral-500 group-hover:text-neutral-600 dark:text-neutral-500 dark:group-hover:text-neutral-400">
-                                    I use Golang, Java, PHP as my main language
-                                </span>
+                {features.map((feature) => (
+                    <a 
+                        class="group flex flex-col bg-neutral-100 dark:bg-neutral-900/30 rounded-xl hover:group" 
+                        href={feature.href || '#'}
+                    >
+                        <div class="p-4 md:p-5">
+                            <div class="flex">
+                                <Icon name={feature.icon} />
+                                <div class="grow ms-5">
+                                    <span class="block text-lg font-bold text-neutral-600 group-hover:text-orange-400 dark:text-neutral-300 dark:group-hover:text-orange-300">
+                                        {feature.title}
+                                    </span>
+                                    <span class="mt-1 block text-neutral-500 group-hover:text-neutral-600 dark:text-neutral-500 dark:group-hover:text-neutral-400">
+                                        {feature.description}
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-
-                <a class="group flex flex-col bg-neutral-100 dark:bg-neutral-900/30 rounded-xl hover:group" href="#">
-                    <div class="p-4 md:p-5">
-                        <div class="flex">
-                            <Icon name="laravel" />
-                            <div class="grow ms-5">
-                                <span class="block text-lg font-bold text-neutral-600 group-hover:text-orange-400 dark:text-neutral-300 dark:group-hover:text-orange-300">Laravel</span>
-                                <span class="mt-1 block text-neutral-500 group-hover:text-neutral-600 dark:text-neutral-500 dark:group-hover:text-neutral-400">
-                                    Love Laravel forever
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="group flex flex-col bg-neutral-100 dark:bg-neutral-900/30 rounded-xl hover:group" href="#">
-                    <div class="p-4 md:p-5">
-                        <div class="flex">
-                            <Icon name="email" />
-                            <div class="grow ms-5">
-                                <span class="block text-lg font-bold text-neutral-600 group-hover:text-orange-400 dark:text-neutral-300 dark:group-hover:text-orange-300">
-                                    Email me
-                                </span>
-                                <span class="mt-1 block text-neutral-500 group-hover:text-neutral-600 dark:text-neutral-500 dark:group-hover:text-neutral-400">
-                                    Reach me at <span class="text-blue-600 decoration-2 group-hover:underline font-medium dark:text-blue-500">godruoyi@gmail.com</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                ))}
             </div>
         </div>
     </div>

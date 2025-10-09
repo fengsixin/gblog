@@ -25,7 +25,25 @@ const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort(
         alt="随便看看"
     />
 
-    <FeaturesSection />
+    <FeaturesSection 
+        features={[
+            {
+                icon: "server",
+                title: "Focus on Backend",
+                description: "I use Golang, Java, PHP as my main language"
+            },
+            {
+                icon: "laravel",
+                title: "Laravel",
+                description: "Love Laravel forever"
+            },
+            {
+                icon: "email",
+                title: "Email me",
+                description: "Reach me at godruoyi@gmail.com"
+            }
+        ]} 
+    />
 
     <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
         <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
