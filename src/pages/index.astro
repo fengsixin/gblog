@@ -15,8 +15,10 @@ const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort(
 
 <BaseLayout>
     <HeroSection
-        title=`Hello, <span class="text-yellow-500 dark:text-yellow-400">访客</span>`
-        subTitle="欢迎来到我的个人博客，我热爱技术分享和写作"
+        title={
+            `Welcome, <span class="text-yellow-500 dark:text-yellow-400">冯思昕</span>`
+        }
+        subTitle="个人折腾园地，一起折腾起来"
         primaryBtn="参观一下"
         primaryBtnURL="/posts"
         src={blogHeroImg}
