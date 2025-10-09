@@ -69,5 +69,11 @@
     "preline": "^2.1.0",
     "timeago.js": "^4.0.2",
     "unist-util-visit": "^5.0.0"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
   }
 }
