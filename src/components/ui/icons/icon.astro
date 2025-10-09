@@ -6,18 +6,19 @@ interface Path {
   class?: string
 }
 
-const { name } = Astro.props
+const { name, class: externalClass } = Astro.props
 
 const icon = (Icons as any)[name] || {}
 
 const paths: Path[] = icon.paths || [];
+const iconClass = externalClass ? `${icon.class || ''} ${externalClass}`.trim() : icon.class;
 ---
 
 {
   icon
 ? (
     <svg
-        class={icon.class}
+        class={iconClass}
         height={icon.height}
         viewBox={icon.viewBox}
         width={icon.width}

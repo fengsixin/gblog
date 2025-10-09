@@ -486,4 +486,54 @@ export const Icons = {
         strokeLinejoin: 'round',
         stroke: 'currentColor',
     },
+    blog: {
+        paths: [
+            {
+                d: 'M6 12a6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6 6 6 0 0 1-6-6',
+            },
+            {
+                d: 'M15.04 7.03a6 6 0 0 1 3.91 7.03',
+            },
+            {
+                d: 'M17.91 3.35a10 10 0 0 1 2.09 4.65',
+            },
+            {
+                d: 'M3 3v.01',
+            },
+            {
+                d: 'M12 7v.01',
+            },
+            {
+                d: 'M7.5 12v.01',
+            },
+            {
+                d: 'M7.5 12a4.5 4.5 0 0 1 6.5 1.97 4.5 4.5 0 0 1-2.5 6.47',
+            },
+        ],
+        class: 'flex-shrink-0 size-3.5',
+        width: 24,
+        height: 24,
+        viewBox: '0 0 24 24',
+        fill: 'none',
+        stroke: 'currentColor',
+        strokeWidth: '2',
+        strokeLinecap: 'round',
+        strokeLinejoin: 'round',
+    },
+    twitter: {
+        paths: [
+            {
+                d: 'M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z',
+            },
+        ],
+        class: 'flex-shrink-0 size-3.5',
+        width: 24,
+        height: 24,
+        viewBox: '0 0 24 24',
+        fill: 'none',
+        stroke: 'currentColor',
+        strokeWidth: '2',
+        strokeLinecap: 'round',
+        strokeLinejoin: 'round',
+    },
 }

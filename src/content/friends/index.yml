@@ -1,12 +1,22 @@
 # 这里是您的友链数据示例
 # 您可以编辑此文件来添加您的朋友们
 
-- avatar: 'https://example.com/avatar1.jpg'  # 朋友的头像
+- avatar: 'https://github.com/EveSunMaple.png'  # 朋友的头像
   social:
-    twitter: 'your_friend_twitter'           # 可选
-    blog: 'https://your-friend-website.com' # 可选
-    github: 'your_friend_github'            # 可选
-  title: '朋友的网站标题'
-  avatarDark: 'https://example.com/avatar1-dark.jpg' # 深色模式下使用的头像（可选）
-  name: '朋友的名字'
-  description: '关于这位朋友的简短介绍'
+#    twitter: 'your_friend_twitter'           # 可选
+#    blog: 'https://your-friend-website.com' # 可选
+    github: 'https://github.com/EveSunMaple'            # 可选
+  title: 'SunMaple'
+#  avatarDark: 'https://github.com/EveSunMaple.png' # 深色模式下使用的头像（可选）
+  name: 'SunMaple'
+  description: '大佬的项目跨度很大，宝藏很多！！'
+
+- avatar: 'https://lisenhui.cn/imgs/avatar.png'  # 朋友的头像
+  social:
+#    twitter: 'your_friend_twitter'           # 可选
+    blog: 'https://lisenhui.cn/' # 可选
+#    github: 'your_friend_github'            # 可选
+  title: '凡梦星尘'
+#  avatarDark: 'https://example.com/avatar1-dark.jpg' # 深色模式下使用的头像（可选）
+  name: '凡梦星尘'
+  description: 'hugo主题站作者，纯内容站hugo也很好用'
