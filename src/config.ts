@@ -3,9 +3,9 @@ import type { NavigationLink, Site } from './types.ts'
 export const SITE: Site = {
     author: '冯思昕', // 请替换为您的姓名
     url: 'https://fsx.tianran.site', // 请替换为您的博客URL
-    title: 'Your Blog Title', // 请替换为您的博客标题
-    description: 'Your personal blog description', // 请替换为您的博客描述
-    shortDescription: '',
+    title: '风似心在飞', // 请替换为您的博客标题
+    description: '中年大叔天天折腾的小园地^_^', // 请替换为您的博客描述
+    shortDescription: '总要留点什么！',
 }
 
 export const NavigationLinks: NavigationLink[] = [
@@ -31,7 +31,7 @@ export const FooterLinks = [
         links: [
             { name: 'RSS', url: '/rss.xml' },
             { name: '站点地图', url: '/sitemap-index.xml' },
-            { name: 'GitHub', url: 'https://github.com/your-username' }, // 请替换为您的GitHub链接
+            { name: 'GitHub', url: 'https://github.com/fengsixin' },
         ],
     },
 ]

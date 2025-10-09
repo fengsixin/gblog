@@ -15,13 +15,12 @@ const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort(
 
 <BaseLayout>
     <HeroSection
-        title=
-`Hello, <span class="text-yellow-500 dark:text-yellow-400">访客</span>`
+        title=`Hello, <span class="text-yellow-500 dark:text-yellow-400">访客</span>`
         subTitle="欢迎来到我的个人博客，我热爱技术分享和写作"
-        primaryBtn="浏览文章"
+        primaryBtn="参观一下"
         primaryBtnURL="/posts"
         src={blogHeroImg}
-        alt="我的个人博客"
+        alt="随便看看"
     />
 
     <FeaturesSection />
@@ -32,7 +31,7 @@ const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort(
                 最新文章
             </h2>
             <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
-                分享技术，记录生活
+                折腾呗，闲着也是闲着！
             </p>
         </div>
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -46,7 +45,7 @@ const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort(
 
     <HeroSectionAlt
         title="关注我的GitHub"
-        subTitle="我热爱开源，在GitHub上分享一些有趣的小工具，欢迎查看我的代码"
-        url="https://github.com/your-username"
+        subTitle="折腾一些不一定有人用的项目，如果对你有用我很开心！"
+        url="https://github.com/fengsixin"
     />
 </BaseLayout>
