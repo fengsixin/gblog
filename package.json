@@ -1,21 +1,21 @@
 {
-  "name": "godruoyi.com",
+  "name": "your-blog-name.com",
   "type": "module",
   "version": "1.0.0",
-  "homepage": "https://godruoyi.com",
+  "homepage": "https://your-blog-url.com",
   "bugs": {
-    "url": "https://github.com/godruoyi/gblog/issues",
-    "email": "godruoyi@gmail.com"
+    "url": "https://github.com/your-username/your-repo/issues",
+    "email": "your-email@example.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/godruoyi/gblog.git"
+    "url": "https://github.com/your-username/your-repo.git"
   },
   "license": "MIT",
   "author": {
-    "name": "Godruoyi",
-    "email": "godruoyi@gmail.com",
-    "url": "https://godruoyi.com"
+    "name": "Your Name",
+    "email": "your-email@example.com",
+    "url": "https://your-blog-url.com"
   },
   "scripts": {
     "dev": "astro dev",

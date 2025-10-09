@@ -15,7 +15,7 @@ import { SITE } from '@/config'
 
 export async function GET(context: APIContext) {
     // Get the URL to prepend to relative site links. Based on `site` in `astro.config.mjs`.
-    let baseUrl = context.site?.href || 'https://godruoyi.com'
+    let baseUrl = context.site?.href || 'https://your-blog-url.com' // 请替换为您的实际博客URL
     if (baseUrl.at(-1) === '/') {
         baseUrl = baseUrl.slice(0, -1)
     }

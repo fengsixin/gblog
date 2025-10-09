@@ -21,11 +21,23 @@ type Props = CollectionEntry<'posts'>
 const post = Astro.props
 const { Content, remarkPluginFrontmatter, headings } = await post.render()
 
-const category: CollectionEntry<'categories'> = (await getCollection('categories')).filter(
+const categoryCollection = await getCollection('categories');
+const category: CollectionEntry<'categories'> | undefined = categoryCollection.find(
     c => c.slug === post.data.category,
-).pop() as CollectionEntry<'categories'>
+);
 
-const tags = post.data.tags ?? [category.slug]
+// 如果分类不存在，创建一个默认分类
+const defaultCategory = {
+  slug: post.data.category,
+  data: {
+    title: post.data.category,
+    description: post.data.category
+  }
+};
+
+const categoryForUse = category || defaultCategory;
+
+const tags = post.data.tags ?? [categoryForUse.slug]
 const URL = Astro.url.href
 const ogImage = post.data.ogImage
 ---
@@ -75,9 +87,9 @@ const ogImage = post.data.ogImage
                             <li class="inline-flex items-center">
                                 <a
                                     class="flex items-center text-sm text-orange-400 hover:text-orange-500 focus:outline-none focus:text-orange-500"
-                                    href=`/categories/${category.slug}`
+                                    href={`/categories/${categoryForUse.slug}`}
                                 >
-                                    {category?.data?.title}
+                                    {categoryForUse?.data?.title}
                                 </a>
                                 <svg
                                     class="flex-shrink-0 size-5 text-neutral-500 dark:text-neutral-600 mx-2"

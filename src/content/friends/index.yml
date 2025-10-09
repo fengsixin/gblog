@@ -1,37 +1,12 @@
-- avatar: 'https://yufan.me/logo.svg'
-  social:
-    twitter: 'amehochan'
-    blog: 'https://yufan.me/links'
-    github: 'syhily'
-  title: '诗与梦想的远方'
-  avatarDark: 'https://yufan.me/logo-dark.svg'
-  name: '雨帆'
-  description: "A thoughtful guy living a simple life. Working for bread, studying for interests, and thinking for hope. Learned about just 8 programming languages for fun"
+# 这里是您的友链数据示例
+# 您可以编辑此文件来添加您的朋友们
 
-- avatar: 'https://images.godruoyi.com/gblog/bird.png'
+- avatar: 'https://example.com/avatar1.jpg'  # 朋友的头像
   social:
-    twitter: 'sppan24'
-    github: 'sppan24'
-    blog: "https://www.sppan24.cn"
-  title: 'Pan Bird'
-  name: 'Sppan'
-  description: 'A man and a Bird who knows everything'
-
-- avatar: 'https://bucket.liruifengv.com/avatar.jpg'
-  social:
-    twitter: 'liruifengv'
-    blog: 'https://liruifengv.com'
-    github: 'liruifengv'
-  title: 'Web Developer'
-  name: 'liruifengv'
-  description: "Web 开发者，Astro 项目成员，开源爱好者。"
-
-- avatar: 'https://avatars.githubusercontent.com/u/21162238?v=4'
-  social:
-    twitter: 'quentin_hsu'
-    blog: 'https://www.xqy404.com/'
-    github: 'QuentinHsu'
-  title: 'Web Developer'
-  name: 'Quentin Hau'
-  description: "Life's tough, let's be romantic"
-
+    twitter: 'your_friend_twitter'           # 可选
+    blog: 'https://your-friend-website.com' # 可选
+    github: 'your_friend_github'            # 可选
+  title: '朋友的网站标题'
+  avatarDark: 'https://example.com/avatar1-dark.jpg' # 深色模式下使用的头像（可选）
+  name: '朋友的名字'
+  description: '关于这位朋友的简短介绍'

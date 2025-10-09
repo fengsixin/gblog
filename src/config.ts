@@ -1,51 +1,51 @@
 import type { NavigationLink, Site } from './types.ts'
 
 export const SITE: Site = {
-    author: 'Godruoyi',
-    url: 'https://godruoyi.com',
-    title: '连波的闲谈杂鱼',
-    description: 'Godruoyi\'s personal blog, I enjoy the process of building something using any technology stack',
+    author: '冯思昕', // 请替换为您的姓名
+    url: 'https://fsx.tianran.site', // 请替换为您的博客URL
+    title: 'Your Blog Title', // 请替换为您的博客标题
+    description: 'Your personal blog description', // 请替换为您的博客描述
     shortDescription: '',
 }
 
 export const NavigationLinks: NavigationLink[] = [
-    { name: 'Posts', url: '/posts/' },
-    { name: 'Category', url: '/categories/' },
-    { name: 'Timeline', url: '/timeline/' },
-    { name: 'About', url: '/posts/about-godruoyi/' },
-    { name: 'Friends', url: '/friends/' },
+    { name: '文章', url: '/posts/' },
+    { name: '分类', url: '/categories/' },
+    { name: '时间线', url: '/timeline/' },
+    { name: '关于', url: '/about/' }, // 我们将创建一个单独的about页面
+    { name: '友链', url: '/friends/' },
 ]
 
 export const FooterLinks = [
     {
-        section: 'Blog',
+        section: '博客',
         links: [
-            { name: 'Posts', url: '/posts/' },
-            { name: 'Timeline', url: '/timeline/' },
-            { name: 'Categories', url: '/categories/' },
-            { name: 'About Me', url: '/posts/about-godruoyi/' },
+            { name: '文章', url: '/posts/' },
+            { name: '时间线', url: '/timeline/' },
+            { name: '分类', url: '/categories/' },
+            { name: '关于我', url: '/about/' },
         ],
     },
     {
-        section: 'Other',
+        section: '其他',
         links: [
             { name: 'RSS', url: '/rss.xml' },
-            { name: 'Site Map', url: '/sitemap-index.xml' },
-            { name: 'GitHub', url: 'https://github.com/godruoyi' },
+            { name: '站点地图', url: '/sitemap-index.xml' },
+            { name: 'GitHub', url: 'https://github.com/your-username' }, // 请替换为您的GitHub链接
         ],
     },
 ]
 
 export const Settings = {
     GoogleAnalytics: {
-        enable: false,
-        id: 'G-TKQ4L3ZDSF',
+        enable: false, // 暂时禁用，您可以根据需要启用
+        id: 'YOUR-GA-ID', // 请替换为您的Google Analytics ID
     },
 
     // See https://github.com/umami-software/umami
     UmamiAnalytics: {
-        enable: true,
-        dataWebsiteID: 'bf63658a-9418-4f39-a6a1-5a0cedb6e429',
+        enable: false, // 暂时禁用，您可以根据需要启用
+        dataWebsiteID: 'YOUR-UMAMI-ID', // 请替换为您的Umami ID
     },
 
     Comment: {
@@ -56,10 +56,10 @@ export const Settings = {
         // please visit https://giscus.app/ to learn how to configure it.
         // You can also check out this article: https://liruifengv.com/posts/add-comments-to-astro/.
         giscus: {
-            repo: 'godruoyi/gblog',
-            repoId: 'MDEwOlJlcG9zaXRvcnkxMjcyODI0NzA',
-            category: 'Announcements',
-            categoryId: 'DIC_kwDOB5YtJs4CfZnX',
+            repo: 'your-username/your-repo', // 请替换为您的GitHub仓库
+            repoId: 'YOUR-REPO-ID', // 请替换为您的仓库ID
+            category: 'Announcements', // 请替换为您在Giscus中设置的类别
+            categoryId: 'YOUR-CATEGORY-ID', // 请替换为您在Giscus中设置的类别ID
             darkThem: 'noborder_gray',
             lightThem: 'light',
         },
@@ -95,7 +95,7 @@ export const SEO = {
     structuredData: {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
-        'inLanguage': 'en-US',
+        'inLanguage': 'zh-CN', // 如果您的博客是中文的，请使用zh-CN
         '@id': SITE.url,
         'url': SITE.url,
         'name': SITE.title,
