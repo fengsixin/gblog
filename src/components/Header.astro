@@ -83,29 +83,6 @@ import AlgoliaDocSearch from './support/search/AlgoliaDocSearch'
     </nav>
 </header>
 <script is:inline>
-const ViewTransitionStyleCSS = `::view-transition-group(root) {
-    animation-timing-function: var(--expo-out);
-}
-::view-transition-new(root) {
-    mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="0" cy="0" r="18" fill="white" filter="url(%23blur)"/></svg>') top left / 0 no-repeat;
-    mask-origin: content-box;
-    animation: scale 1s;
-    transform-origin: top left;
-}
-::view-transition-old(root),.dark::view-transition-old(root) {
-    animation: scale 1s;
-    transform-origin: top left;
-    z-index: -1;
-}
-@keyframes scale {
-    to {
-        mask-size: 350vmax;
-    }
-}`
-const viewTransitionStyleElement = document.createElement('style')
-document.head.appendChild(viewTransitionStyleElement)
-const injectViewTransitionStyleCSS = () => viewTransitionStyleElement.textContent = ViewTransitionStyleCSS
-
 const HSThemeAppearance = {
     init() {
         const defaultTheme = 'default'
@@ -127,26 +104,39 @@ const HSThemeAppearance = {
     },
 
     setAppearance(theme, saveInStore = true, dispatchEvent = true) {
-        const $resetStylesEl = this._resetStylesOnLoad()
-
         if (saveInStore) {
             localStorage.setItem('hs_theme', theme)
         }
 
+        // 计算最终的主题值
+        let finalTheme = theme;
         if (theme === 'auto') {
-            theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'
+            finalTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
         }
 
-        document.querySelector('html').classList.remove('dark')
-        document.querySelector('html').classList.remove('default')
-        document.querySelector('html').classList.remove('auto')
+        const $resetStylesEl = this._resetStylesOnLoad();
 
-        document.querySelector('html').classList.add(this.getOriginalAppearance())
+        const htmlEl = document.querySelector('html');
+        htmlEl.classList.remove('dark', 'default', 'auto');
 
-        setTimeout(() => $resetStylesEl.remove())
+        // 根据计算结果设置类
+        if (finalTheme === 'dark') {
+            htmlEl.classList.add('dark');
+        } else {
+            htmlEl.classList.remove('dark');
+        }
+
+        // 同时添加原始主题类
+        htmlEl.classList.add(theme);
+
+        setTimeout(() => {
+            if ($resetStylesEl && $resetStylesEl.parentNode) {
+                $resetStylesEl.remove();
+            }
+        }, 50);
 
         if (dispatchEvent) {
-            window.dispatchEvent(new CustomEvent('on-hs-appearance-change', { detail: theme }))
+            window.dispatchEvent(new CustomEvent('on-hs-appearance-change', { detail: finalTheme }));
         }
     },
 
@@ -183,26 +173,15 @@ window.addEventListener('load', () => {
 
     $clickableThemes.forEach(($item) => {
         $item.addEventListener('click', () => {
-            const switchThem = () => HSThemeAppearance.setAppearance(
-                $item.getAttribute('data-hs-theme-click-value'),
-                true,
-                true,
-            )
-
-            if (document.startViewTransition) {
-                document.startViewTransition(() => {
-                    injectViewTransitionStyleCSS()
-                    switchThem()
-                })
-            } else {
-                switchThem()
-            }
+            const themeValue = $item.getAttribute('data-hs-theme-click-value');
+            HSThemeAppearance.setAppearance(themeValue, true, true);
         })
     })
 
     $switchableThemes.forEach(($item) => {
         $item.addEventListener('change', (e) => {
-            HSThemeAppearance.setAppearance(e.target.checked ? 'dark' : 'default')
+            const themeValue = e.target.checked ? 'dark' : 'default';
+            HSThemeAppearance.setAppearance(themeValue, true, true);
         })
 
         $item.checked = HSThemeAppearance.getAppearance() === 'dark'
