@@ -8,7 +8,7 @@ import AlgoliaDocSearch from './support/search/AlgoliaDocSearch'
 
 <header class="sticky inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start xl:top-6">
     <nav
-        class="relative mx-2 w-full rounded-[36px] border border-neutral-100 bg-neutral-100 px-4 py-3 backdrop-blur-md dark:border-neutral-700/40 dark:bg-neutral-800/80 dark:backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 lg:px-8 xl:mx-auto"
+        class="relative mx-2 w-full rounded-[36px] border border-neutral-100/40 bg-neutral-100/50 px-4 py-3 backdrop-blur-md dark:border-neutral-700/40 dark:bg-neutral-800/80 dark:backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 lg:px-8 xl:mx-auto"
         aria-label="Global"
     >
         <div class="flex items-center justify-between ">
@@ -109,34 +109,34 @@ const HSThemeAppearance = {
         }
 
         // 计算最终的主题值
-        let finalTheme = theme;
+        let finalTheme = theme
         if (theme === 'auto') {
-            finalTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+            finalTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'
         }
 
-        const $resetStylesEl = this._resetStylesOnLoad();
+        const $resetStylesEl = this._resetStylesOnLoad()
 
-        const htmlEl = document.querySelector('html');
-        htmlEl.classList.remove('dark', 'default', 'auto');
+        const htmlEl = document.querySelector('html')
+        htmlEl.classList.remove('dark', 'default', 'auto')
 
         // 根据计算结果设置类
         if (finalTheme === 'dark') {
-            htmlEl.classList.add('dark');
+            htmlEl.classList.add('dark')
         } else {
-            htmlEl.classList.remove('dark');
+            htmlEl.classList.remove('dark')
         }
 
         // 同时添加原始主题类
-        htmlEl.classList.add(theme);
+        htmlEl.classList.add(theme)
 
         setTimeout(() => {
             if ($resetStylesEl && $resetStylesEl.parentNode) {
-                $resetStylesEl.remove();
+                $resetStylesEl.remove()
             }
-        }, 50);
+        }, 50)
 
         if (dispatchEvent) {
-            window.dispatchEvent(new CustomEvent('on-hs-appearance-change', { detail: finalTheme }));
+            window.dispatchEvent(new CustomEvent('on-hs-appearance-change', { detail: finalTheme }))
         }
     },
 
@@ -173,15 +173,15 @@ window.addEventListener('load', () => {
 
     $clickableThemes.forEach(($item) => {
         $item.addEventListener('click', () => {
-            const themeValue = $item.getAttribute('data-hs-theme-click-value');
-            HSThemeAppearance.setAppearance(themeValue, true, true);
+            const themeValue = $item.getAttribute('data-hs-theme-click-value')
+            HSThemeAppearance.setAppearance(themeValue, true, true)
         })
     })
 
     $switchableThemes.forEach(($item) => {
         $item.addEventListener('change', (e) => {
-            const themeValue = e.target.checked ? 'dark' : 'default';
-            HSThemeAppearance.setAppearance(themeValue, true, true);
+            const themeValue = e.target.checked ? 'dark' : 'default'
+            HSThemeAppearance.setAppearance(themeValue, true, true)
         })
 
         $item.checked = HSThemeAppearance.getAppearance() === 'dark'
