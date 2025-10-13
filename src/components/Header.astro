@@ -4,6 +4,7 @@ import BrandLogo from '@components/ui/logos/BrandLogo.astro'
 import Theme from '@components/ui/logos/Theme.astro'
 import { NavigationLinks } from '@/config'
 import AlgoliaDocSearch from './support/search/AlgoliaDocSearch'
+import { Icon } from 'astro-icon/components'
 ---
 
 <header class="sticky inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start xl:top-6">
@@ -28,35 +29,14 @@ import AlgoliaDocSearch from './support/search/AlgoliaDocSearch'
                     aria-controls="navbar-collapse-with-animation"
                     aria-label="Toggle navigation"
                 >
-                    <svg
-                        class="h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:hidden"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <line x1="3" x2="21" y1="6" y2="6"></line>
-                        <line x1="3" x2="21" y1="12" y2="12"></line>
-                        <line x1="3" x2="21" y1="18" y2="18"></line>
-                    </svg>
-                    <svg
-                        class="hidden h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:block"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <path d="M18 6 6 18"></path>
-                        <path d="m6 6 12 12"></path>
-                    </svg>
+                    <Icon 
+                        name="lucide:menu" 
+                        class="h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:hidden" 
+                    />
+                    <Icon 
+                        name="lucide:x" 
+                        class="hidden h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:block" 
+                    />
                 </button>
             </div>
             <span class="inline-block md:hidden">

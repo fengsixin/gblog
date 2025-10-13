@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import { transformerCopyButton } from '@rehype-pretty/transformers'
 import { defineConfig, passthroughImageService, sharpImageService } from 'astro/config'
+import icon from 'astro-icon'
 import rehypePrettyCode from 'rehype-pretty-code'
 import { SITE } from './src/config.ts'
 import { remarkReadingTime } from './src/support/plugins.ts'
@@ -24,6 +25,7 @@ export default defineConfig({
         sitemap(),
         tailwind(),
         react(),
+        icon(),
         (await import('@playform/compress')).default({
             CSS: true,
             JavaScript: true,
