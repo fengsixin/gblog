@@ -1,5 +1,5 @@
 ---
-import Icon from '@components/ui/icons/icon.astro'
+import { Icon } from 'astro-icon/components'
 
 const { title, url } = Astro.props
 
@@ -22,6 +22,6 @@ const ringClasses = 'dark:ring-zinc-200';
     target="_blank"
     rel="noopener noreferrer"
 >
-    <Icon name="github" />
+    <Icon name="lucide:github" class="w-4.5 h-4.5 transition flex-shrink-0 text-neutral-700 duration-300 group-hover:-translate-y-1" />
     {title}
 </a>

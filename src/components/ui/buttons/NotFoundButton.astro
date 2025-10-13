@@ -1,5 +1,5 @@
 ---
-import Icon from '@components/ui/icons/icon.astro'
+import { Icon } from 'astro-icon/components'
 
 const { title, id, noArrow } = Astro.props
 
@@ -19,5 +19,5 @@ const ringClasses = 'dark:ring-zinc-200';
 
 <button class={`${baseClasses} ${borderClasses} ${bgColorClasses} ${disableClasses} ${fontSizeClasses} ${ringClasses}`} id={id}>
     {title}
-    {noArrow ? null : <Icon name="arrowRight" />}
+    {noArrow ? null : <Icon name="lucide:arrow-right" />}
 </button>

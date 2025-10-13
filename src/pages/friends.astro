@@ -3,7 +3,7 @@ import type { CollectionEntry } from 'astro:content'
 import MainSection from '@components/ui/sections/MainSection.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
 import { getCollection } from 'astro:content'
-import Icon from '@components/ui/icons/icon.astro'
+import { Icon } from 'astro-icon/components'
 
 const friendsData: CollectionEntry<'friends'>[] = await getCollection('friends')
 if (friendsData?.length === 0) {
@@ -53,7 +53,7 @@ const friends = friendsData[0].data
                                         href={f.social.blog}
                                         target="_blank"
                                     >
-                                        <Icon name="blog" class="flex-shrink-0 size-3.5" />
+                                        <Icon name="lucide:file-text" class="flex-shrink-0 size-3.5" />
                                     </a>
                                 )
                             }
@@ -65,7 +65,7 @@ const friends = friendsData[0].data
                                         href={`https://twitter.com/${f.social.twitter}`}
                                         target="_blank"
                                     >
-                                        <Icon name="twitter" class="flex-shrink-0 size-3.5" />
+                                        <Icon name="lucide:twitter" class="flex-shrink-0 size-3.5" />
                                     </a>
                                 )
                             }
@@ -74,10 +74,10 @@ const friends = friendsData[0].data
                                 f.social?.github && (
                                     <a
                                         class="shadow-md inline-flex justify-center items-center size-8 text-sm font-semibold rounded-lg border border-gray-300 text-gray-500 hover:text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-neutral-300 dark:border-neutral-800 dark:hover:bg-neutral-700"
-                                        href=`https://github.com/${f.social.github}`
+                                        href={`https://github.com/${f.social.github}`}
                                         target="_blank"
                                     >
-                                        <Icon name="github" class="flex-shrink-0 size-3.5" />
+                                        <Icon name="lucide:github" class="flex-shrink-0 size-3.5" />
                                     </a>
                                 )
                             }
@@ -110,6 +110,6 @@ const friends = friendsData[0].data
      changeAvatar({ detail: getCurrentTheme() })
 
      window.addEventListener('on-hs-appearance-change', changeAvatar)
- })
- </script>
+ }) 
+</script>
 </BaseLayout>

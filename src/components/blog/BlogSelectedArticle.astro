@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import Icon from '@components/ui/icons/icon.astro'
+import { Icon } from 'astro-icon/components'
 import BlogCard from './BlogCard.astro'
 
 const { posts } = Astro.props
@@ -31,7 +31,7 @@ interface Props {
         >
             <div class="flex items-center gap-x-2">
                 <p>Want to read more?</p>Go here
-                <Icon name="arrowRight" class="h-4 w-4 flex-shrink-0 transition duration-300 group-hover:translate-x-1" />
+                <Icon name="lucide:arrow-right" class="h-4 w-4 flex-shrink-0 transition duration-300 group-hover:translate-x-1" />
             </div>
         </a>
     </div>

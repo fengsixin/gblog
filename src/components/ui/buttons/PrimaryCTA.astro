@@ -1,5 +1,5 @@
 ---
-import Icon from '@components/ui/icons/icon.astro'
+import { Icon } from 'astro-icon/components'
 
 const { title, url, noArrow } = Astro.props
 
@@ -23,5 +23,5 @@ const ringClasses = 'dark:ring-zinc-200';
     data-astro-prefetch
 >
   {title}
-  {noArrow ? null : <Icon name="arrowRight" />}
+  {noArrow ? null : <Icon name="lucide:arrow-right" />}
 </a>
