@@ -26,7 +26,7 @@ const { features = [] }: Props = Astro.props;
                     >
                         <div class="p-4 md:p-5">
                             <div class="flex">
-                                <Icon name={feature.icon} />
+                                <Icon name={feature.icon} class="h-6 w-6 flex-shrink-0 text-orange-400 dark:text-orange-300" />
                                 <div class="grow ms-5">
                                     <span class="block text-lg font-bold text-neutral-600 group-hover:text-orange-400 dark:text-neutral-300 dark:group-hover:text-orange-300">
                                         {feature.title}
